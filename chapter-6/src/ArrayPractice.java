@@ -16,5 +16,10 @@ public class ArrayPractice {
         System.out.println(Arrays.toString(scoreArray));
         System.out.println("十个学生的成绩之和为：" + sum);
         System.out.println("十个学生的平均数为：" + sum / 10);
+
+        for (int score :
+                scoreArray) {
+            System.out.println(score);
+        }
     }
 }
