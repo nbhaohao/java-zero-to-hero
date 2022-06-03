@@ -52,10 +52,7 @@ public class Phone {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Phone)) {
-            return false;
-        }
-//        if (o == null || getClass() != o.getClass()) return false;
+        if (o == null || getClass() != o.getClass()) return false;
         Phone phone = (Phone) o;
         return Double.compare(phone.price, price) == 0 && year == phone.year && Objects.equals(brand, phone.brand);
     }
