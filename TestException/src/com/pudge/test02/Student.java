@@ -34,9 +34,10 @@ public class Student {
         return sex;
     }
 
-    public void setSex(String sex) throws Exception {
+    public void setSex(String sex) throws MyError {
         if (sex.equals("男") || sex.equals("女")) {
             this.sex = sex;
+            throw new MyError("123");
         } else {
 //            throw new RuntimeException("wrong sex value");
 //            try {
@@ -44,7 +45,7 @@ public class Student {
 //            } catch (Exception exception) {
 //                exception.printStackTrace();
 //            }
-            throw new Exception("wrong sex value");
+            throw new MyException("wrong sex value");
         }
     }
 
