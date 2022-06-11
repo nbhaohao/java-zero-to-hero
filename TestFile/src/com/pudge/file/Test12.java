@@ -9,6 +9,7 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 class Person implements Serializable {
+    private static final long serialVersionUID = -8914537014435108490L;
     private String name;
 
 
