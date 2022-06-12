@@ -7,15 +7,17 @@ public class BuyTicketThread extends Thread {
         super(name);
     }
 
+    public static synchronized void buyTicket() {
+        if (ticketNum > 0) {
+            System.out.println(Thread.currentThread().getName() + "我买到了从北京到哈尔滨的第" + ticketNum + "张车票");
+            ticketNum--;
+        }
+    }
+
     @Override
     public void run() {
         for (int i = 0; i < 1000; i++) {
-            synchronized (BuyTicketThread.class) {
-                if (ticketNum > 0) {
-                    System.out.println(this.getName() + "我买到了从北京到哈尔滨的第" + ticketNum + "张车票");
-                    ticketNum--;
-                }
-            }
+            buyTicket();
         }
     }
 }
