@@ -36,9 +36,11 @@ class User implements Serializable {
 
 public class TestClient {
     public static void main(String[] args) {
+        System.out.println("客户端运行成功了");
         try (Socket socket = new Socket("192.168.3.32", 8888);
              ObjectOutputStream dataOutputStream = new ObjectOutputStream(socket.getOutputStream());
-             DataInputStream dataInputStream = new DataInputStream(socket.getInputStream())) {
+             DataInputStream dataInputStream = new DataInputStream(socket.getInputStream())
+        ) {
             Scanner scanner = new Scanner(System.in);
             System.out.println("please enter your account：");
             String name = scanner.next();
